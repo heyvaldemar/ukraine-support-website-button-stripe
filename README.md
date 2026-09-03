@@ -2,11 +2,11 @@
 
 Add code from `ukraine-support-website-button.html` and/or `ukraine-support-website-stripe.html` to the `<head>` tag of your website.
 
-## Button Example
+## Button example
 
 ![Ukraine Support Button for Website](images/ukraine-support-website-button.jpg)
 
-## Stripe Example
+## Stripe example
 
 ![Ukraine Support Stripe for Website](images/ukraine-support-website-stripe.jpg)
 
