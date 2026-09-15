@@ -1,1 +1,73 @@
-<script id="sfuw" type="text/javascript" async="true" src="https://cdn.jsdelivr.net/gh/StandForUkraine/site-widget@1.0/artifacts/index.iife.min.js?variant=button&button-position=bottom-left"></script>
+<!-- Ukraine support button.
+     Paste into <body>, anywhere. It positions itself.
+
+     NO EXTERNAL REQUESTS. No CDN, no script, no font, no image file: the flag
+     is an inline SVG and the whole thing is about a kilobyte. A visitor's
+     browser makes zero additional connections because this is on the page, so
+     it cannot be slowed down, blocked, tracked or silently changed by anyone
+     else. The version this replaced loaded 7,576 bytes of JavaScript from a
+     third-party CDN, from a repository that had not been touched since July
+     2022 and carried no licence at all.
+
+     NO JAVASCRIPT EITHER. It is a link and a stylesheet. Nothing to execute,
+     nothing to break, and it works with scripting disabled.
+
+     CHANGE THE DESTINATION on the next line if you prefer a different fund.
+     The default is UNITED24, the official fundraising platform of Ukraine. -->
+<a class="u-support" href="https://u24.gov.ua/"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Support Ukraine: UNITED24, the official fundraising platform of Ukraine">
+  <svg class="u-support__flag" viewBox="0 0 24 16" aria-hidden="true" focusable="false">
+    <rect width="24" height="8" fill="#0057B7"/>
+    <rect y="8" width="24" height="8" fill="#FFD700"/>
+  </svg>
+  <span>Support Ukraine</span>
+</a>
+
+<style>
+  .u-support {
+    /* Fixed rather than inline, so it needs nothing from your layout and
+       cannot be pushed off the page by it. Bottom left keeps it clear of the
+       cookie banners and chat bubbles that live bottom right. */
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 9999;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+
+    /* The flag's own blue, and white on it clears WCAG AA for body text. */
+    background: #0057B7;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+
+    font: 500 0.875rem/1.2 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .u-support:hover,
+  .u-support:focus-visible { background: #004794; }
+  /* Visible focus, because a link nobody can tab to is a link some people do
+     not have. */
+  .u-support:focus-visible { outline: 3px solid #FFD700; outline-offset: 2px; }
+  .u-support__flag {
+    width: 1.25rem;
+    height: auto;
+    border-radius: 2px;
+    flex: none;
+    /* A RING, BECAUSE THE FLAG IS HALF THE COLOUR OF THE BUTTON. Without it
+       the blue half disappears into the background and what is left reads as
+       a yellow dash rather than a flag. Caught by looking at a render. */
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.85);
+  }
+  @media (max-width: 480px) {
+    .u-support { bottom: 0.75rem; left: 0.75rem; padding: 0.5rem 0.75rem; font-size: 0.8125rem; }
+  }
+  /* Nobody wants this on a printout. */
+  @media print { .u-support { display: none; } }
+</style>

@@ -1,1 +1,73 @@
-<script id="sfuw" type="text/javascript" async="true" src="https://cdn.jsdelivr.net/gh/StandForUkraine/site-widget@1.0/artifacts/index.iife.min.js?variant=strip&strip-color=black"></script>
+<!-- Ukraine support stripe.
+     Paste as the FIRST thing inside <body>.
+
+     NO EXTERNAL REQUESTS. No CDN, no script, no font, no image file: the flag
+     is an inline SVG and the whole thing is about a kilobyte. The version this
+     replaced loaded 7,576 bytes of JavaScript from a third-party CDN, from a
+     repository that had not been touched since July 2022 and carried no
+     licence at all.
+
+     NO JAVASCRIPT EITHER. It is a link and a stylesheet.
+
+     IT DOES NOT FLOAT OVER YOUR PAGE. A fixed bar covers whatever is under it,
+     which on most sites is the navigation. This one sits in the normal flow at
+     the top of the document and pushes the page down by its own height, so
+     nothing of yours is hidden and you do not have to add padding anywhere to
+     compensate.
+
+     CHANGE THE DESTINATION on the next line if you prefer a different fund.
+     The default is UNITED24, the official fundraising platform of Ukraine. -->
+<a class="u-stripe" href="https://u24.gov.ua/"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Support Ukraine: UNITED24, the official fundraising platform of Ukraine">
+  <svg class="u-stripe__flag" viewBox="0 0 24 16" aria-hidden="true" focusable="false">
+    <rect width="24" height="8" fill="#0057B7"/>
+    <rect y="8" width="24" height="8" fill="#FFD700"/>
+  </svg>
+  <span class="u-stripe__text">Support Ukraine</span>
+  <span class="u-stripe__cta">Donate via UNITED24</span>
+</a>
+
+<style>
+  .u-stripe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+
+    background: #0057B7;
+    color: #FFFFFF;
+    font: 500 0.875rem/1.3 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    text-decoration: none;
+  }
+  .u-stripe:hover,
+  .u-stripe:focus-visible { background: #004794; }
+  .u-stripe:focus-visible { outline: 3px solid #FFD700; outline-offset: -3px; }
+  .u-stripe__flag {
+    width: 1.25rem;
+    height: auto;
+    border-radius: 2px;
+    flex: none;
+    /* A RING, BECAUSE THE FLAG IS HALF THE COLOUR OF THE BAR. Without it the
+       blue half disappears into the background and what is left reads as a
+       yellow dash rather than a flag. Caught by looking at a render. */
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.85);
+  }
+  /* The call to action carries the flag's yellow and an underline, so it does
+     not rely on colour alone to read as the thing you click. */
+  .u-stripe__cta {
+    color: #FFD700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  @media (max-width: 480px) {
+    .u-stripe { font-size: 0.8125rem; gap: 0.4rem; padding: 0.45rem 0.6rem; }
+    /* On a narrow screen the sentence and the call to action do not both fit;
+       the call to action is the half worth keeping. */
+    .u-stripe__text { display: none; }
+  }
+  @media print { .u-stripe { display: none; } }
+</style>
