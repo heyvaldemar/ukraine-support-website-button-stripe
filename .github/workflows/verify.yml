@@ -33,3 +33,13 @@ jobs:
       - name: actionlint
         run: |
           docker run --rm -v "$PWD:/mnt" -w /mnt rhysd/actionlint:1.7.12 -color
+
+      - name: The README's claim, checked against the files
+        # This repository's whole argument is that the snippets add nothing to
+        # a page but themselves. A claim on a public page that nothing
+        # re-reads is a claim that stays there after it stops being true: a
+        # web font "just for the button" is a one-line change that would leave
+        # the README lying to everyone who pasted this on the strength of it.
+        run: |
+          chmod +x tests/no-external-dependencies.sh
+          ./tests/no-external-dependencies.sh

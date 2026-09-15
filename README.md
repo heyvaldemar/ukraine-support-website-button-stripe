@@ -53,6 +53,8 @@ The default is [UNITED24](https://u24.gov.ua/), the official fundraising platfor
 
 **Print.** Hidden on paper, in both.
 
+**The claim is tested.** `tests/no-external-dependencies.sh` runs on every push and pull request and fails if either file grows something executable, names an address other than the destination, references a file, opens a tab without `rel="noopener noreferrer"`, loses its `aria-label`, or if this README starts naming a destination the files do not use. Eleven assertions, and each was shown a planted violation before it was believed: one of the six could not match anything at all, because it used a PCRE lookahead inside `grep -E`, and a planted `<link href="font.woff2">` walked straight past it.
+
 ---
 
 ## About the maintainer
